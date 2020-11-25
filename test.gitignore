@@ -1,2 +1,4 @@
-*.o
-*~
+# alle Dateien, die auf .o enden
+*.o# eine bestimmte Datei, z.B. ein Executablestatistics
+# Sicherungskopien, die auf ~ enden
+*~# das Unterverzeichnis build/ (von CMake)build/
