@@ -6,3 +6,6 @@ statistics
 *~
 # das Unterverzeichnis build/ (von CMake)
 build/
+
+.DS_Store
+*.tar.gz
