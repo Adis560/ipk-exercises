@@ -4,32 +4,28 @@
     Alexandru Stefan Iov, Adis Klopic, Johannes Kolbe
 */
 
-#include <iostream>
-#include <cmath>
-#include <vector>
 #include <array>
+#include <cmath>
 #include <fstream>
-
-using namespace std;
+#include <iostream>
+#include <string>
+#include <vector>
 
 // a: read filename
 std::vector<std::array<double, 2>> read_points_from_file(std::string filename)
 {
-    // prepare io-files
-    std::array<double, 2> pointsArray;
-    std::vector<std::array<double, 2>> returnVector;
-
     std::ifstream inputFile(filename);
-    int counter = 0;
-    while (inputFile >> pointsArray[0] >> pointsArray[1])
+    std::array<double, 2> dot;
+    std::vector<std::array<double, 2>> collection;
+    while (inputFile >> dot[0] >> dot[1])
     {
-        returnVector[counter] = pointsArray;
-        counter++;
+        collection.push_back(dot);
     }
-    return returnVector;
+    return collection;
 }
 
-int main(int argc, char **argv)
+
+int main(int argc, char** argv)
 {
     read_points_from_file("../blatt04-daten/convex-hull-points.txt");
     return 0;
