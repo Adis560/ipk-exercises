@@ -11,11 +11,11 @@ std::map<char,int> get_frequencies(){
         if (not std::cin)
         break;
         if(std::isalpha(c)){
-            if(f.find(std::toupper(c)) == f.end()){
-                f[c]++;
+            if(f.find(char(std::toupper(c))) == f.end()){
+                f.insert({char(std::toupper(c)), 1});
             }
             else{
-                f.insert({std::toupper(c), 1});
+                f[char(std::toupper(c))]++;
             }
         }
     }
