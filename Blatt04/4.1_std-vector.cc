@@ -59,8 +59,10 @@ int main(int argc, char** argv) {
     std::vector<double> v1;
     std::vector<double> v2(10);
     std::vector<double> v3 = {{ 3, 8, 7, 5, 9, 2 }};
+
     for (int i = 0 ; i < v1.size() ; i++)
         cout << v1[i] << " ";
+
     for (int i = 0 ; i < v2.size() ; i++) 
        cout << v2[i] << " ";
     cout << endl;
@@ -73,19 +75,25 @@ int main(int argc, char** argv) {
     // b: min und max in einem Vektor durch std::pair zurückgeben
     cout << minmax(v3).first << ", " << minmax(v3).second << endl;
     std::vector<double> v4 = reversed(v3);
+
     for (int i = 0 ; i < v4.size() ; i++) 
        cout << v4[i] << " ";
     cout << endl;
+
     std::vector<double> v5 = {{3.5, 2.2, 8.0}};
     roundelements(v5);
+
     for (int i = 0 ; i < v5.size() ; i++) 
        cout << v5[i] << " ";
     cout << endl;
+
     referencereverse(v3);
     for (int i = 0 ; i < v3.size() ; i++)
         cout << v3[i] << " ";
     cout << endl;
+
     std::vector<double> v6 = {{1, 2, 3, 4, 5}};
+    
     referencereverse(v1);
     referencereverse(v6);
     for (int i = 0 ; i < v6.size() ; i++)
