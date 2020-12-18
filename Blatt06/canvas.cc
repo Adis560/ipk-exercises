@@ -22,12 +22,13 @@ void Canvas::setBrightness(int i, int j, int brightness)
 }
 
 Point Canvas::coord(int i, int j) const {
-    // Position.x = ( width / horPixels ) * i
-    // Position.y = ( height / vertPixels ) * j
+    // Canvas Dimensions
     double pixelWidth = _width / _horPixels;
     double pixelHeight = _height / _vertPixels;
+    // Canvas Starting Points
     double canvasX = _center.x() - _width / 2;
     double canvasY = _center.y() - _height / 2;
+
     double x = canvasX + i * pixelWidth;
     double y = canvasY + j * pixelHeight;
     return Point(x,y);
