@@ -10,8 +10,21 @@
 
 int main(int argc, char **argv)
 {
-    Point<int, 4> p;
+    // a)
+    Point<int, 4> p1;
+    std::cout << p1.x(2) << std::endl;
+    std::cout << p1.dimension << std::endl;
 
-    std::cout << p.coordinate(2) << std::endl;
-    std::cout << p.dimension << std::endl;
+    // b)
+    Point<double, 3> p;
+    p.x(2) = 3.2;
+    std::cout << p.x(2) << std::endl;
+
+    // c)
+    Point<double, 4> p3 = {{3.2, 5.4, 3.3, 4.2}};
+    std::cout << p3.norm() << std::endl;
+
+    // d)
+    Point<double, 6> p4 = {{0.1, 1.2, 2.3, 3.4, 4.5, 5.6}};
+    std::cout << p4[5] << std::endl;
 }

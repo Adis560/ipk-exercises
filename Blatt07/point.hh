@@ -6,26 +6,37 @@
 
 #include <array>
 #include <iostream>
+#include <math.h>
 #ifndef POINT_HH
 #define POINT_HH
 
 template <typename Coord, int dim>
+
 class Point
 {
-private:
-    std::array<Coord, dim> _coord;
-
 public:
-    Point() : _coord() {}
-    Point(const std::array<Coord, dim> &coord)
-        : _coord(coord) {}
-
-    Coord coordinate(int x) const
-    {
-        return _coord[x];
-    }
     using Coordinate = Coord;
     static const int dimension = dim;
+    Coord &operator[](int i) { return _coord[i]; };
+    const Coord &operator[](int i) const { return _coord[i]; };
+
+    Point() : _coord() {}
+    Point(const std::array<Coordinate, dim> &coord) : _coord(coord) {}
+
+    Coordinate &x(int i) { return _coord[i]; }
+
+    Coordinate norm() const
+    {
+        Coord sum;
+        for (auto &point : _coord)
+        {
+            sum += point * point;
+        }
+        return sqrt(sum);
+    }
+
+private:
+    std::array<Coord, dim> _coord;
 };
 
 #endif // POINT_HH
