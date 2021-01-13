@@ -1,3 +1,9 @@
+/*  ipk-exercises:2020-ws-20-ge591757
+    Uni-Heidelberg - Programmierkurs (IPK) WS20/21
+    Abgabe: 2021-01-15 | Aufgabenblatt 7 - Aufgabe 2: Statistik mit Templates
+    Alexandru Stefan Iov, Adis Klopic, Johannes Kolbe
+*/
+
 #ifndef STATISTICS_HH
 #define STATISTICS_HH
 
@@ -8,9 +14,7 @@
 
 // Return the mean
 template <typename T>
-//template <typename Zahl, typename T<typename Zahl>>
 typename T::value_type mean(const T &v)
-//Zahl mean(const T<Zahl> &v)
 {
     typename T::value_type sum = 0;
     for (auto e : v)
@@ -52,7 +56,6 @@ typename T::value_type moment(const T &v, int k)
 
 // Return the standard deviation
 template <typename T>
-// auto seems to work too
 auto std_dev(const T &v)
 {
     typename T::value_type m = mean(v);
@@ -61,6 +64,30 @@ auto std_dev(const T &v)
         sum += (m - e) * (m - e);
 
     return std::sqrt(sum / v.size());
+}
+
+// Implementation 2c
+template <typename T>
+typename T::value_type robust_median(const T &v)
+{
+    if (v.size() == 0)
+        return 0;
+
+    std::vector<typename T::value_type> v2;
+    for (auto value : v)
+    {
+        v2.push_back(value);
+    }
+    std::sort(v2.begin(), v2.end());
+
+    if (v.size() % 2 == 0)
+    {
+        return 0.5 * (v2[v.size() / 2 - 1] + v2[v.size() / 2]);
+    }
+    else
+    {
+        return v2[(v.size() + 1) / 2 - 1];
+    }
 }
 
 // Return a variety of statistics
