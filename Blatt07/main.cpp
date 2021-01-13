@@ -7,6 +7,7 @@
 #include <iostream>
 #include <array>
 #include "point.hh"
+#include "statistics.hh"
 
 int main(int argc, char **argv)
 {
