@@ -23,7 +23,7 @@ public:
     Point() : _coord() {}
     Point(const std::array<Coordinate, dim> &coord) : _coord(coord) {}
 
-    Coordinate &x(int i) { return _coord[i]; }
+    Coordinate &coord(int i) { return _coord[i]; }
 
     Coordinate norm() const
     {

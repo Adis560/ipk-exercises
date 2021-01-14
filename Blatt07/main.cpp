@@ -6,23 +6,23 @@
 
 #include <iostream>
 #include <array>
-#include "point.hh"
+#include "point.cpp"
 #include "statistics.hh"
 
 int main(int argc, char **argv)
 {
     // a)
     Point<int, 4> p1;
-    std::cout << p1.x(2) << std::endl;
+    std::cout << p1.coord(2) << std::endl;
     std::cout << p1.dimension << std::endl;
 
     // b)
     Point<double, 3> p;
-    p.x(2) = 3.2;
-    std::cout << p.x(2) << std::endl;
+    p.coord(2) = 3.2;
+    std::cout << p.coord(2) << std::endl;
 
     // c)
-    Point<double, 4> p3 = {{3.2, 5.4, 3.3, 4.2}};
+    Point<double, 3> p3 = {{0.1, 1.2, 2.3}};
     std::cout << p3.norm() << std::endl;
 
     // d)
