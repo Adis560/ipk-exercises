@@ -12,3 +12,6 @@ target_link_libraries(main point_lib)
 
 add_executable(test_point test_point.cc)
 add_test(NAME test_point COMMAND test_point)
+
+add_executable(statistics statisticsdriver.cc io.cc)
+add_test(NAME statistics COMMAND statistics)
