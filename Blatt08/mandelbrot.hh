@@ -6,21 +6,23 @@
 
 #include "fractals/canvas.hh"
 
-void mandelbrot(Canvas &canvas, double threshold, int maxInt, std::string filename) {}
+// void mandelbrot(Canvas &canvas, double threshold, int maxInt, std::string filename) {}
 
 class IterationResult
 {
 public:
+    // Konstruktor
+    IterationResult(Point p, int iter) : _lastPoint(p), _iterations(iter){};
     // Funktionen
     IterationResult iterate(Point z, Point c, double threshold, int maxIt){};
 
     // Accessor
     Point point() { return _lastPoint; };
     Point point(Point p) { _lastPoint = p; };
-    int it() { return _iter; }
-    int it(int i) { _iter = i; }
+    int it() { return _iterations; }
+    int it(int i) { _iterations = i; }
 
 private:
     Point _lastPoint;
-    int _iter;
+    int _iterations;
 };
